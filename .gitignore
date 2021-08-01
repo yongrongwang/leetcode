@@ -1,0 +1,16 @@
+.DS_Store
+
+# Eclipse
+.metadata
+bin/
+.settings/
+.project
+.classpath
+
+# Compiled class file
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
