@@ -1,7 +1,5 @@
 package arrayAndString;
 
-import arrays.SortArrayByParity;
-
 /**
  * You are given an integer array nums where the largest integer is unique. Determine
  * whether the largest element in the array is at least twice as much as every other

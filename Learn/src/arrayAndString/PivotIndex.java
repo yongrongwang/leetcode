@@ -1,7 +1,5 @@
 package arrayAndString;
 
-import utils.ArrayUtils;
-
 /**
  * Given an array of integers nums, calculate the pivot index of this array. The
  * pivot index is the index where the sum of all the numbers strictly to the left

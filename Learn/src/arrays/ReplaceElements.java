@@ -38,7 +38,6 @@ public class ReplaceElements {
      * 有元素最大值
      */
     public int[] replaceElements(int[] arr) {
-        int n = arr.length;
         int max = -1;
         int temp;
         for (int i = arr.length - 1; i >= 0; i--) {
