@@ -10,7 +10,7 @@
  * -100 <= Node.val <= 100
  */
 
-package queueStack;
+package binaryTree;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -20,17 +20,17 @@ public class InorderTraversal {
 
 	public static void main(String[] args) {
 	    /*
-         *            2
+         *            5
          *           / \
-         *          2   2
+         *          2   4
          *         /   /
-         *        3   3
+         *        1   3
          */
-        TreeNode node1 = new TreeNode(3, null, null);
+        TreeNode node1 = new TreeNode(1, null, null);
         TreeNode node2 = new TreeNode(2, node1, null);
         TreeNode node3 = new TreeNode(3, null, null);
-        TreeNode node4 = new TreeNode(2, node3, null);
-        TreeNode node5 = new TreeNode(2, node2, node4);
+        TreeNode node4 = new TreeNode(4, node3, null);
+        TreeNode node5 = new TreeNode(5, node2, node4);
         InorderTraversal i = new InorderTraversal();
         for (Integer val : i.inorderTraversal(node5)) {
             System.out.print(val + " ");
@@ -62,16 +62,13 @@ public class InorderTraversal {
 	}
 	
 	/**
-	 * 迭代法：先迭代访问左子树直到最左边的叶子节点，然后将当前节点加入到数组中，然后迭代访问右子树，
+	 * 迭代法：先迭代访问左子树直到最左边的叶子节点，然后将当前节点加入到数组中，最后迭代访问右子树，
 	 * 访问方法和之前一样
 	 * @param root
 	 * @return
 	 */
 	public List<Integer> inorderTraversal2(TreeNode root) {
 		LinkedList<Integer> list = new LinkedList<Integer>();
-		if (root == null) {
-			return list;
-		}
 		Stack<TreeNode> stack = new Stack<TreeNode>();
 		TreeNode cur = root;
 		while (cur != null || !stack.isEmpty()) {
@@ -87,17 +84,4 @@ public class InorderTraversal {
 		return list;
 	}
 
-}
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode() {}
-    TreeNode(int val) { this.val = val; }
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
 }
