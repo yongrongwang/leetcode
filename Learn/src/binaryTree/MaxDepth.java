@@ -33,6 +33,12 @@ public class MaxDepth {
         System.out.println(m.maxDepth(node5));
     }
     
+    /**
+     * 自底向上法，递归访问子节点，如果当前节点为空则返回0，否则取左右子树的高度较大者加一作为
+     * 返回值
+     * @param root
+     * @return
+     */
     public int maxDepth(TreeNode root) {
         if (root == null) {
             return 0;
