@@ -28,7 +28,7 @@
 
 package queueStack;
 
-import utils.ArrayUtils;
+import arrays.ArrayUtils;
 
 public class FloodFill {
     

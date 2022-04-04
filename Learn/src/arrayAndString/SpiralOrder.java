@@ -1,9 +1,9 @@
 package arrayAndString;
 
-import utils.ArrayUtils;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import arrays.ArrayUtils;
 
 /**
  * Given an m x n matrix, return all elements of the matrix in spiral order.

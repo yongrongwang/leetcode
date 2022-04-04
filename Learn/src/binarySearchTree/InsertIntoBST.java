@@ -20,6 +20,8 @@
 
 package binarySearchTree;
 
+import binaryTree.TreeNode;
+
 public class InsertIntoBST {
 
     public static void main(String[] args) {

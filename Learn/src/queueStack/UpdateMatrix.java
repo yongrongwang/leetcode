@@ -20,7 +20,7 @@ package queueStack;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import utils.ArrayUtils;
+import arrays.ArrayUtils;
 
 public class UpdateMatrix {
 

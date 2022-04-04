@@ -29,13 +29,16 @@ public class MergeTwoLists {
         }
         list1.visit();
         MergeTwoLists m = new MergeTwoLists();
-        ListNode h = m.mergeTwoLists(list.getHead(), list1.getHead());
+        ListNode h = m.mergeTwoLists2(list.getHead(), list1.getHead());
         MyLinkedList list2 = new MyLinkedList(h);
         list2.visit();
     }
 
     /**
-     *
+     * 迭代法：如果两个链表有一个为空则返回不为空的那个链表，否则使用虚拟头节点，让cur指向虚拟
+     * 头节点，之后开始遍历两个链表，如果两个链表都没有遍历结束，则对比l1和l2指向的节点的值，将
+     * cur.next指向值较小的那个节点，然后相应指针前移一步，如果两个链表有一个遍历结束了，则将
+     * cur.next指向剩余的没有遍历完的部分
      * @param l1
      * @param l2
      * @return
@@ -43,39 +46,47 @@ public class MergeTwoLists {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if (l1 == null) {
             return l2;
-        } else if (l2 == null) {
+        }
+        if (l2 == null) {
             return l1;
         }
-        ListNode head = null;
-        if (l1.val < l2.val) {
-            head = l1;
-            l1 = l1.next;
-        } else {
-            head = l2;
-            l2 = l2.next;
-        }
-        ListNode cur = head;
+        ListNode dummy = new ListNode();
+        ListNode cur = dummy;
         while (l1 != null && l2 != null) {
+            cur.next = (l1.val < l2.val ? l1 : l2);
             if (l1.val < l2.val) {
-                cur.next = l1;
                 l1 = l1.next;
             } else {
-                cur.next = l2;
                 l2 = l2.next;
             }
             cur = cur.next;
         }
-        while (l1 != null) {
-            cur.next = l1;
-            l1 = l1.next;
-            cur = cur.next;
+        cur.next = (l1 != null ? l1 : l2);
+        return dummy.next;
+    }
+
+    /**
+     * 递归法：每次递归，对比l1和l2指向的节点的值，将值较小的那个节点的next指针指向下一次调用
+     * 返回的节点，同时将较小的那个链表的指针前移一步，而在下一次调用中，如果有一个链表遍历完了
+     * 则直接返回另一个没遍历完的链表，否则同样对比l1和l2指向的节点的值，返回值较小的那个节点
+     * @param l1
+     * @param l2
+     * @return
+     */
+    public ListNode mergeTwoLists2(ListNode l1, ListNode l2) {
+        if (l1 == null) {
+            return l2;
         }
-        while (l2 != null) {
-            cur.next = l2;
-            l2 = l2.next;
-            cur = cur.next;
+        if (l2 == null) {
+            return l1;
         }
-        return head;
+        if (l1.val < l2.val) {
+            l1.next = mergeTwoLists2(l1.next, l2);
+            return l1;
+        } else {
+            l2.next = mergeTwoLists2(l1, l2.next);
+            return l2;
+        }
     }
 
 }

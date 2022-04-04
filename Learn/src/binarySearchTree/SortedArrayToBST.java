@@ -17,6 +17,8 @@
 
 package binarySearchTree;
 
+import binaryTree.TreeNode;
+
 public class SortedArrayToBST {
     public static void main(String[] args) {
         int[] nums = {-10,-3,0,5,9};

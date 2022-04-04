@@ -13,6 +13,7 @@
  */
 
 package binarySearchTree;
+import binaryTree.TreeNode;
 
 public class IsBalanced {
 

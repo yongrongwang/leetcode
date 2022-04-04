@@ -17,6 +17,7 @@
 package binarySearchTree;
 
 import java.util.Stack;
+import binaryTree.TreeNode;
 
 public class IsValidBST {
     TreeNode pre = null;
@@ -87,17 +88,4 @@ public class IsValidBST {
         return true;
     }
 
-}
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode() {}
-    TreeNode(int val) { this.val = val; }
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
 }

@@ -1,12 +1,12 @@
 /**
  * You are given the root of a binary search tree (BST) and an integer val.
- * Find the node in the BST that the node's value equals val and return the subtree 
+ * Find the node in the BST that the node's value equals val and return the subtree
  * rooted with that node. If such a node does not exist, return null.
- * 
+ *
  * Example 1:
  * Input: root = [4,2,7,1,3], val = 2
  * Output: [2,1,3]
- * 
+ *
  * Constraints:
  * The number of nodes in the tree is in the range [1, 5000].
  * 1 <= Node.val <= 10^7
@@ -15,6 +15,8 @@
  */
 
 package binarySearchTree;
+
+import binaryTree.TreeNode;
 
 public class SearchBST {
 
@@ -32,7 +34,7 @@ public class SearchBST {
         TreeNode node4 = new TreeNode(5, null, node2);
         TreeNode node5 = new TreeNode(4, node3, node4);
         SearchBST s = new SearchBST();
-        node5 = s.searchBST(node5, 2);
+        node5 = s.searchBST2(node5, 2);
         if (node5 != null) {
             System.out.println("True");
             BSTIterator b = new BSTIterator(node5);
@@ -43,22 +45,32 @@ public class SearchBST {
             System.out.println("False");
         }
     }
-    
+
     /**
-     * 如果当前值等于目标值则返回当前节点，如果当前值大于目标值则查找左子树，否则查找右子树
+     * 迭代法：如果当前值等于目标值则返回当前节点，如果当前值大于目标值则查找左子树，否则查找右子树
      * @param root
      * @param val
      * @return
      */
     public TreeNode searchBST(TreeNode root, int val) {
         while (root != null && root.val != val) {
-            if (root.val > val) {
-                root = root.left;
-            } else {
-                root = root.right;
-            }
+            root = (root.val > val ? root.left : root.right);
         }
         return root;
+    }
+
+    /**
+     * 递归法：如果当前值等于目标值则返回当前节点，如果当前值大于目标值则查找左子树，否则查找右子树
+     * @param root
+     * @param val
+     * @return
+     */
+    public TreeNode searchBST2(TreeNode root, int val) {
+        if (root == null || root.val == val) {
+            return root;
+        }
+        root = (root.val > val ? root.left : root.right);
+        return searchBST2(root, val);
     }
 
 }

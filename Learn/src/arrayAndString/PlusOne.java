@@ -1,6 +1,6 @@
 package arrayAndString;
 
-import utils.ArrayUtils;
+import arrays.ArrayUtils;
 
 /**
  * Given a non-empty array of decimal digits representing a non-negative integer,

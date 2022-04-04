@@ -40,6 +40,7 @@
 package binarySearchTree;
 
 import java.util.Stack;
+import binaryTree.TreeNode;
 
 public class BSTIterator {
     private Stack<TreeNode> stack = null;

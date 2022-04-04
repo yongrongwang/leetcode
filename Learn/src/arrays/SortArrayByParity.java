@@ -1,7 +1,5 @@
 package arrays;
 
-import utils.ArrayUtils;
-
 /**
  * Given an array nums of non-negative integers, return an array consisting of
  * all the even elements of nums, followed by all the odd elements of nums.You may

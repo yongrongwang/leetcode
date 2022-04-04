@@ -1,4 +1,4 @@
-package utils;
+package arrays;
 
 public class ArrayUtils {
     public void printArray(int[] nums) {

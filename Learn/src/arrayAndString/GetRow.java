@@ -1,8 +1,3 @@
-package arrayAndString;
-
-import java.util.Arrays;
-import java.util.List;
-
 /**
  * Given an integer rowIndex, return the rowIndexth (0-indexed) row of the Pascal's
  * triangle. In Pascal's triangle, each number is the sum of the two numbers directly
@@ -15,17 +10,19 @@ import java.util.List;
  * Constraints:
  * 0 <= rowIndex <= 33
  */
+
+package arrayAndString;
+
+import java.util.Arrays;
+import java.util.List;
+
 public class GetRow {
 
     public static void main(String[] args) {
         GetRow g = new GetRow();
-        System.out.println(g.getRow(0));
-        System.out.println(g.getRow(1));
-        System.out.println(g.getRow(2));
-        System.out.println(g.getRow(3));
-        System.out.println(g.getRow(4));
-        System.out.println(g.getRow(5));
-        System.out.println(g.getRow(6));
+        for (int i = 0; i < 6; i++) {
+            System.out.println(g.getRow(i));
+        }
     }
 
     /**

@@ -95,14 +95,3 @@ public class Trie {
     }
 
 }
-
-class TrieNode {
-    boolean isWord;
-    int sum;
-    TrieNode[] children;
-    String word;
-    
-    public TrieNode(int size) {
-        children = new TrieNode[size];
-    }
-};

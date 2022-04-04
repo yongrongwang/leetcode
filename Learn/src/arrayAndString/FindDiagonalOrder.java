@@ -1,6 +1,6 @@
 package arrayAndString;
 
-import utils.ArrayUtils;
+import arrays.ArrayUtils;
 
 /**
  * Given an m x n matrix mat, return an array of all the elements of the array in

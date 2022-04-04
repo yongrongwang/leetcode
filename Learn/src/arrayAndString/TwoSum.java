@@ -1,6 +1,6 @@
 package arrayAndString;
 
-import utils.ArrayUtils;
+import arrays.ArrayUtils;
 
 /**
  * Given an array of integers numbers that is already sorted in non-decreasing
