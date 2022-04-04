@@ -1,8 +1,5 @@
 package linkedList;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-
 /**
  * You are given a doubly linked list which in addition to the next and previous
  * pointers, it could have a child pointer, which may or may not point to a separate

@@ -20,12 +20,14 @@ package queueStack;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import utils.ArrayUtils;
+
 public class UpdateMatrix {
 
     public static void main(String[] args) {
         int[][] mat = {{0,0,0},{0,1,0},{1,1,1}};
         UpdateMatrix um = new UpdateMatrix();
-        QueueStackUtil u = new QueueStackUtil();
+        ArrayUtils u = new ArrayUtils();
         u.printMat(mat);
 //        u.printMat(um.updateMatrix(mat));
         u.printMat(um.updateMatrix2(mat));

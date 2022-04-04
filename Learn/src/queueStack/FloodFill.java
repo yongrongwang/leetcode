@@ -28,6 +28,8 @@
 
 package queueStack;
 
+import utils.ArrayUtils;
+
 public class FloodFill {
     
     private int[] dir = {0, 1, 0, -1, 0};
@@ -39,7 +41,7 @@ public class FloodFill {
         int newColor = 2;
         FloodFill f = new FloodFill();
         System.out.println("sr = " + sr + ", sc = " + sc + ", newColor = " + newColor);
-        QueueStackUtil u = new QueueStackUtil();
+        ArrayUtils u = new ArrayUtils();
         u.printMat(image);
         int[][] newImage = f.floodFill(image, sr, sc, newColor);
         u.printMat(newImage);

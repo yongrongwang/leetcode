@@ -17,21 +17,28 @@ import java.util.List;
 import java.util.Stack;
 
 public class InorderTraversal {
-	class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode() {}
-        TreeNode(int val) { this.val = val; }
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
 	public static void main(String[] args) {
-
+	    /*
+         *            2
+         *           / \
+         *          2   2
+         *         /   /
+         *        3   3
+         */
+        TreeNode node1 = new TreeNode(3, null, null);
+        TreeNode node2 = new TreeNode(2, node1, null);
+        TreeNode node3 = new TreeNode(3, null, null);
+        TreeNode node4 = new TreeNode(2, node3, null);
+        TreeNode node5 = new TreeNode(2, node2, node4);
+        InorderTraversal i = new InorderTraversal();
+        for (Integer val : i.inorderTraversal(node5)) {
+            System.out.print(val + " ");
+        }
+        System.out.println();
+        for (Integer val : i.inorderTraversal2(node5)) {
+            System.out.print(val + " ");
+        }
 	}
 	
 	/**
@@ -80,4 +87,17 @@ public class InorderTraversal {
 		return list;
 	}
 
+}
+
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+    TreeNode() {}
+    TreeNode(int val) { this.val = val; }
+    TreeNode(int val, TreeNode left, TreeNode right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
 }

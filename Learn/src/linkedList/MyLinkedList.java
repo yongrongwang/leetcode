@@ -50,7 +50,6 @@ public class MyLinkedList {
 
     public static void main(String[] args) {
         MyLinkedList list = new MyLinkedList();
-        ListNode head = list.getHead();
         list.addAtHead(7);
         list.visit();
         list.addAtHead(2);
